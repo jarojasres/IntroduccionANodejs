@@ -18,7 +18,7 @@
 },
 {
     "id": 1004,
-    "nombre": "Testeando apliaciones de Node.js",
+    "nombre": "Testeando aplicaciones de Node.js",
     "duracion": 10,
     "valor": 100000  
 },

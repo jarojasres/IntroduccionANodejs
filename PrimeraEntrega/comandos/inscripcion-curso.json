@@ -1,0 +1,14 @@
+{
+    "cursoId": {
+        "demand": true,
+        "alias": "Id"
+    },
+    "cedula": {
+        "demand": true,
+        "alias": "cc"
+    },
+    "nombre": {
+        "demand": true,
+        "alias": "n"
+    }
+}

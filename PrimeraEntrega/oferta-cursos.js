@@ -1,8 +1,11 @@
 
 const entidadCurso = require('./entidades/curso');
-let cursos = entidadCurso.ObtenerCursos();
 
-console.log("****** CURSOS DE EDUCACIÓN CONTINUA ****** \n");
+
+function mostrarOfertaCursos() {
+    let cursos = entidadCurso.ObtenerCursos();
+
+    console.log("****** CURSOS DE EDUCACIÓN CONTINUA ****** \n");
 
 cursos.forEach((curso, index) => {
 
@@ -10,7 +13,19 @@ cursos.forEach((curso, index) => {
         mostrarInformacionCurso(curso); 
     }, (index + 1) * 2000);
       
-});
+    });
+}
+
+function consultarInformacionCurso(id) {
+    let curso = entidadCurso.ObtenerCursoPorId(id);
+    if(curso){
+        mostrarInformacionCurso(curso);
+    }
+    else {
+        console.log("No hay ningún curso con el id: ["+ id +"]");
+    }
+    return curso;
+}
 
 /**
  * Permite mostar por consola, la información del curso
@@ -25,3 +40,8 @@ function mostrarInformacionCurso(curso) {
                 "\n"); 
     
 }
+
+module.exports = {
+    mostrarOfertaCursos,
+    consultarInformacionCurso
+};
