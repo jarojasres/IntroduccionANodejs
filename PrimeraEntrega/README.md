@@ -18,3 +18,12 @@ entre cada curso
 * Generar un mensaje de alerta en caso de no encontrar un id.
 * En caso de no estar interesado debe mostrarme la lista de cursos, en caso de escribir
   “inscribir” debe hacer el proceso de inscripción
+  
+  
+### ¿Cómo ejecutarlo?
+
+1. Se descarga el último release
+2. Navegar hasta la carpeta "Primera Entrega"
+3. Correr el comando npm install
+4. Escribir node inscripcion, para listar los cursos
+5. Escribir node inscripcion inscribir, para hacer la prematricula
