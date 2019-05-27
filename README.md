@@ -12,3 +12,6 @@ la oferta formal del Tecnológico de Antioquia.
 
 * Como interesado necesito seleccionar un curso para ingresar mis datos y quedar como
   prematriculado
+
+## Primera Entrega BONUS
+ * Mostrar los resultados de la prematricula en el navegador
