@@ -1,0 +1,30 @@
+[{
+    "id": 1000,
+    "nombre": "Introducción a Node.js",
+    "duracion": 10,
+    "valor": 0   
+},
+{
+    "id": 1001,
+    "nombre": "Servicios web con Node.js y Express",
+    "duracion": 30,
+    "valor": 50000  
+},
+{
+    "id": 1003,
+    "nombre": "Node.js avanzado",
+    "duracion": 50,
+    "valor": 200000  
+},
+{
+    "id": 1004,
+    "nombre": "Testeando aplicaciones de Node.js",
+    "duracion": 10,
+    "valor": 100000  
+},
+{
+    "id": 1005,
+    "nombre": "Fundamentos de programación",
+    "duracion": 20,
+    "valor": 0  
+}]

@@ -1,0 +1,21 @@
+{
+  "name": "primeraentrega",
+  "version": "1.0.0",
+  "description": "Primera entrega del curso Introducción a NodeJS mediante el desarrollo de un proyecto ágil",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "yargs",
+    "javascript"
+  ],
+  "author": "jarojasres jarojasres@gmail.com",
+  "license": "ISC"
+}

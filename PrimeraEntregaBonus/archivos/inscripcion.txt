@@ -1,0 +1,20 @@
+
+Fecha inscripción: Sun May 19 2019
+Incrito: 1039450918 - Julian
+Curso: 1001 - Servicios web con Node.js y Express
+Duración: 30, Valor: 50,000
+
+Fecha inscripción: Sun May 19 2019
+Incrito: 1039450918 - Julian
+Curso: 1000 - Introducción a Node.js
+Duración: 10, Valor: 0
+
+Fecha inscripción: Mon May 27 2019
+Incrito: 1039 - Julian Rojas
+Curso: 1000 - Introducción a Node.js
+Duración: 10, Valor: 0
+
+Fecha inscripción: Mon May 27 2019
+Incrito: 1039 - Julian Rojas
+Curso: 1000 - Introducción a Node.js
+Duración: 10, Valor: 0
