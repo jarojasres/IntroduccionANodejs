@@ -8,11 +8,21 @@
     </head>
 
     <body>
+        
+        {{> menu}}
 
         {{{ body }}}
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script>
+            $(function(){
+
+                var itemMenu = $("#contenedorPrincipal").data("menu");
+                $(".nav-item").removeClass("active");
+                $(itemMenu).addClass("active");
+            });
+        </script>
     </body>
 </html>

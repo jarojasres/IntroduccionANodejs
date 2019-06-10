@@ -3,7 +3,10 @@ const app = express();
 const path = require('path');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars')
+const exphbs = require('express-handlebars');
+const cursoRepo = require('../models/curso');
+const usuarioRepo = require('../models/usuario');
+const matriculaRepo = require('../models/matricula');
 require('./helpers');
 
 //paths
@@ -25,12 +28,41 @@ app.use('/js', express.static(dirNodeModules + '/bootstrap/dist/js'));
 
 //End points
 
-app.get('/', (req, res) => {
-    res.render("index", {
-        estudiante: "Julian Rojas",
-        nota1: 2,
-        nota2: 4,
-        nota3: 3
+app.get('/', (req,res) => {
+    let cursos = cursoRepo.buscarPorEstado("disponible");
+    res.render('listarCursos', {
+        cursos: cursos
+    });
+});
+
+app.get('/cursos', (req,res) => {
+    let cursos = cursoRepo.buscarPorEstado("disponible");
+    res.render('listarCursos', {
+        cursos: cursos
+    });
+});
+
+app.get('/cursos/crear', (req, res) => {
+    
+    res.render("crearCurso");
+});
+
+app.post('/cursos/crear', (req, res) => {
+    
+    let curso = {
+        id: req.body.cursoId,
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        valor: req.body.valor,
+        estado: "disponible",
+        horas: req.body.horas,
+        modalidad: req.body.modalidad
+    };
+
+    var mensaje = cursoRepo.crear(curso);
+
+    res.render("crearCurso", {
+        mensaje: mensaje
     });
 });
 
