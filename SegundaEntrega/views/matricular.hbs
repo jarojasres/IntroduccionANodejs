@@ -1,0 +1,42 @@
+<div id="contenedorPrincipal" class="container" data-menu="#matricular">
+    <div class="row">
+        <div class="col-12">
+            <h2>Matricular</h2>
+
+              {{#if mensaje}}
+                    <div class="alert {{mensaje.clase}}" role="alert">
+                            {{mensaje.mensaje}}
+                    </div>
+             {{/if}}
+        <form method="post">
+            <div class="form-group">
+                <label for="identificacion">Identificación</label>
+                <input type="text" class="form-control" id="identificacion" name="identificacion" aria-describedby="identificacionHelp" placeholder="Ingrese identificación" required="required">
+                <small id="identificacionHelp" class="form-text text-muted">Un estudiante no puede matricular dos veces el mismo curso</small>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre" required="required">
+            </div>            
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese Correo electrónico" required="required">
+            </div>     
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese Teléfono" required="required">
+            </div>          
+            <div class="form-group">
+                <label for="cursoId">Curso</label>
+                <select id="cursoId" name="cursoId" class="form-control">
+                    <option value="">--SELECCIONE--</option>
+                    {{#each cursos}}
+                    <option value={{this.id}}>{{this.nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>            
+            <button type="submit" class="btn btn-primary">Matricular</button>
+        </form>
+    </div>
+</div>
+</div>

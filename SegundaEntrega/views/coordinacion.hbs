@@ -1,0 +1,89 @@
+<div id="contenedorPrincipal" class="container" data-menu="#coordinacion">    
+    <div class="row">
+        <div class="col-12">
+            <h2>Cursos</h2>
+<table id="grid" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Valor</th>
+                    <th>Intensidad</th>
+                    <th>Modalidad</th>
+                    <th>Estado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each cursos}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.descripcion}}</td>
+                    <td>{{currency this.valor}}</td>
+                    <td>{{this.horas}}</td>
+                    <td>{{this.modalidad}}</td>
+                    <td>{{#equals this.estado "disponible" }}
+                        <span class="badge badge-primary">{{this.estado}}</span>
+                        {{else}}
+                        <span class="badge badge-warning">{{this.estado}}</span>
+                        {{/equals}}
+
+                    </td>
+                    <td>
+                        <a class="detalles" href="/matriculas/estudiantes/{{this.id}}" data-cursoid="{{this.id}}" data-nombre="{{this.nombre}}" title="Ver estudiantes"><i class="fa fa-users" aria-hidden="true"></i></a>
+                        {{#equals this.estado "disponible" }}
+                        <a class="estado" href="/cursos/cambiarEstado/{{this.id}}/cerrado" title="Cerrar"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+                        {{else}}
+                        <a class="estado" href="/cursos/cambiarEstado/{{this.id}}/disponible" title="Abrir"><i class="fa fa-check-circle" aria-hidden="true"></i></a>                        
+                        {{/equals}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        </div>
+        
+    </div>
+</div>
+
+<div id="modalDetalles" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="tablaEstudiantes" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Identificación</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#section 'script'}}
+
+<script src="/js/coordinacion.js"></script>
+
+{{/section}}
+
