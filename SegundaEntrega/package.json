@@ -1,0 +1,32 @@
+{
+  "name": "segundaentrega",
+  "version": "1.0.0",
+  "description": "Segunda entrega",
+  "main": "src/app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "hbs": "^4.0.4",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarojasres/IntroduccionANodejs/tree/master/SegundaEntrega"
+  },
+  "keywords": [
+    "javascript",
+    "nodeJS",
+    "jquery",
+    "handlebars",
+    "express"
+  ],
+  "author": "Julian Rojas",
+  "license": "ISC"
+}
