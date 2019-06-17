@@ -2,7 +2,7 @@
 function registrarEventos() {
     $(".detalles").on("click", mostrarEstudiantes);
     $(".estado").on("click", cambiarEstado);
-    $(document).on(".eliminarEstudiante", "click", eliminarEstudiante);
+    $(document).on("click", ".eliminarEstudiante", eliminarEstudiante);
 }
 
 function mostrarEstudiantes(e) {
@@ -13,7 +13,6 @@ function mostrarEstudiantes(e) {
     $.ajax({
         url: url,
         success: function(data) {
-            console.log("data", data);
             let filas = construirFilas(cursoId, data, url);
 
             $("#tablaEstudiantes tbody").html(filas);            
@@ -24,7 +23,7 @@ function mostrarEstudiantes(e) {
 }
 
 function construirFilas(cursoId, data, url) {
-
+    //onclick='eliminarEstudiante()'
     let filas = '';
             $.each(data, function(){
             
@@ -34,7 +33,7 @@ function construirFilas(cursoId, data, url) {
                     "<td>" + this.correo + "</td>" +
                     "<td>" + this.telefono + "</td>" +
                     "<td> <a class='eliminarEstudiante' href='/matriculas/eliminarEstudiante/" + this.identificacion + "/" + cursoId + "'" +
-                          "data-url='"+ url + "' data-cursoid='"+ cursoId + "' title='Eliminar'><i class='fa fa-times' aria-hidden='true'></i></a></td>"
+                          "data-url='"+ url + "' data-cursoid='"+ cursoId + "'  title='Eliminar'><i class='fa fa-times' aria-hidden='true'></i></a></td>"
                     
             "</tr>"
             });
@@ -54,13 +53,13 @@ function cambiarEstado(e) {
 }
 
 function eliminarEstudiante(e) {
-    e.stopPropagation();
-    
+    e.preventDefault();
+
     let urlEliminar = $(this).attr("href");
     let urlEstudiantes = $(this).data("url");
     let cursoId = $(this).data("cursoid");
     $.ajax({
-        urlEliminar,
+        url: urlEliminar,
         success:function() {
             $.ajax({
                 url: urlEstudiantes,
@@ -69,7 +68,6 @@ function eliminarEstudiante(e) {
                     let filas = construirFilas(cursoId, data, urlEstudiantes);
         
                     $("#tablaEstudiantes tbody").html(filas);            
-                    $("#modalDetalles").modal("hide");                    
                     $("#modalDetalles").modal("show");
                 }
             });

@@ -51,7 +51,7 @@ const eliminarEstudiante = (cursoId, usuarioId) => {
     if(index != -1) {
         matriculas.splice(index,1);
     }
-    //guardar();
+    guardar();
 }
 
 module.exports = {
